@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="container">
+    <main>
+      <canvas id="myChart" width="200" height="200"></canvas>
+      <script>
+        var ctx = document.getElementById('myChart');
+        const labels = <%- JSON.stringify(labels) %>;
+        const data = <%- JSON.stringify(data) %>;
+        var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: 'Retweets Report Chart',
+                data: data,
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                ],
+                borderColor: ['rgb(255, 99, 132)', 'rgb(255, 159, 64)'],
+                borderWidth: 1,
+              },
+            ],
+          },
+        });
+      </script>
+    </main>
+  </body>
+</html>
