@@ -1,17 +1,17 @@
-****\*\*****\*\*\*****\*\***** TWITTER PROJECT ****\*\*****\*\*\*****\*\*****
+\***\*\*\*\*\***\*\*\*\***\*\*\*\*\*** TWITTER PROJECT \***\*\*\*\*\***\*\*\*\***\*\*\*\*\***
 
 BACKEND:
 
 controllers - (Business logic)
 
-public - All CSS/Static files (may change if we use React in the future)
+public - All CSS/JS/Static files (may change if we use React in the future)
 
 server
 
 - config (db config)
 - migrations (for changing the database schema, adding fields etc.)
 - models (A model is an abstraction that represents a table in your database)
-- seeders (for creating dummy data in)
+- seeders (for creating dummy data in the DB)
 - app.js (main app file)
 
 views (may change if we use React in the future)
