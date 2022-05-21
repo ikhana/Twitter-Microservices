@@ -1,0 +1,29 @@
+name: Deployment
+on:
+    push:
+        branches:
+            - main
+jobs:
+    CD:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Copy folder content recursively to vps
+              uses: garygrossgarten/github-action-scp@release
+              with:
+                  local: ./
+                  remote: /var/repos/Twitter-Marketing-Microservice-Users
+                  host: ${{ secrets.HOST }}
+                  username: ${{ secrets.USERNAME }}
+                  password: ${{ secrets.PASSWORD }}
+            - run: echo "🍏 This job's status is ${{ job.status }}."
+            - name: Install dependencies And Restart
+              uses: garygrossgarten/github-action-scp@release
+              with:
+                  host: ${{ secrets.HOST }}
+                  username: ${{ secrets.USERNAME }}
+                  password: ${{ secrets.PASSWORD }}
+                  port: 22
+                  script: |
+                      cd /var/repos/Twitter-Marketing-Microservice-Users
+                      sudo npm ci
+                      sudo pm2 restart app
