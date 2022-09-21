@@ -2,10 +2,10 @@ const { TwitterClient } = require('twitter-api-client');
 require('dotenv').config();
 
 const twitterClient = new TwitterClient({
-  apiKey: process.env.API_KEY,
-  apiSecret: process.env.API_SECRET,
-  accessToken: process.env.ACCESS_TOKEN,
-  accessTokenSecret: process.env.ACCESS_TOKEN_SECRET,
+  apiKey: "scGy1FxbPUc1pVQvqNQnFdrIP",
+  apiSecret:"UWVIqNSFC0SD769qJpYzlYjYkQ7dwDv1ZUugH2jt7UlQHsvhb7",
+  accessToken:"1557460649344929792-9RypfpBvTNB9aZ0zILejjKpj2uNVlk",
+  accessTokenSecret: "pTD0ZbWHnucU7DgTy9DnnmRGhPxsV1XY59JvERisUSdaH",
 });
 
 const totalNumberOfTweetsPerQuery = async (query) => {
